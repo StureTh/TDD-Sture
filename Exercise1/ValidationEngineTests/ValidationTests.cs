@@ -37,9 +37,29 @@ namespace ValidationEngineTests
         {
             var sut = new Validator();
 
-            var isNull = sut.ValidateEmailAddress("");
+            
 
-            Assert.IsFalse(isNull);
+            Assert.Throws<InvalidEmailException>(() =>
+            {
+
+                sut.ValidateEmailAddress(null);
+
+            });
+        }
+
+        [Test]
+        public void NotValidEmail()
+        {
+            var sut = new Validator();
+
+
+
+            Assert.Throws<InvalidEmailException>(() =>
+            {
+
+                sut.ValidateEmailAddress("sture@mail");
+
+            });
         }
 
      

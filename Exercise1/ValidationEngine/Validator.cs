@@ -14,11 +14,23 @@ namespace ValidationEngine
         {
              var regex = new Regex(@"^([\D]+)@([\D]+)((\.(\D){2,3})+)$");
 
-           
-           
+            if (string.IsNullOrEmpty(email))
+            {
+                throw new InvalidEmailException("This is not a valid email");
+            }
+
+            if (!email.Contains(".com"))
+            {
+               throw new InvalidEmailException("This is not a valid email");
+
+            }
+
+            
+          
 
             return regex.IsMatch(email);
+
         }
-        
+
     }
 }
