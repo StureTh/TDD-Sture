@@ -50,7 +50,7 @@ namespace TravelAgencyTests
         }
 
         [Test]
-        public void SendingInMoreToursThanAllowed_ReturnsFalse()
+        public void SendingInMoreToursThanAllowed_ThrowsException()
         {
             var toursToday = new DateTime(2017,05,24);
 
