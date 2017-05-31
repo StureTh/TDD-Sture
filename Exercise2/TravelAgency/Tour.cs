@@ -14,7 +14,10 @@ namespace TravelAgency
 
        public int NbrOfSeats { get; set; }
 
-
+       public Tour()
+       {
+           
+       }
        public Tour(string name, DateTime tourDate, int nbrOfSeats)
        {
            this.Name = name;
